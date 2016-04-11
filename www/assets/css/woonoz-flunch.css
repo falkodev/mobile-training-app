@@ -1,0 +1,86 @@
+body {
+  font-family: "Roboto", "Helvetica Neue", sans-serif;
+  font-size: 1.4rem;
+  background-color: #fff; }
+
+/*@font-face {
+    font-family: MyriadProSemiBold;
+    src: url(../resources/fonts/MYRIADPRO-SEMIBOLD.OTF);
+}*/
+.home-logo {
+  margin: 0 auto;
+  top: 50px;
+  height: 100px; }
+
+.home-title {
+  display: block;
+  top: 140px;
+  height: 50px;
+  text-align: center;
+  background-color: #e9b66e;
+  color: #e50020;
+  padding-top: 15px;
+  /*font-family: MyriadProSemiBold;*/
+  font-size: 18px;
+  text-transform: uppercase;
+  margin-left: -16px;
+  margin-right: -16px; }
+
+.home-module-list ul {
+  list-style-type: none; }
+  .home-module-list ul li div.home-module-wrapper {
+    /*width: 800px;*/
+    height: 110px;
+    text-align: left;
+    margin-bottom: 20px;
+    border-radius: 3px;
+    border: 1px solid #cccccc;
+    background-color: #fff;
+    background-image: -webkit-repeating-linear-gradient(325deg, #F8F8F8, #F8F8F8 1px, rgba(255, 255, 255, 0.5) 1px, rgba(255, 255, 255, 0.5) 10px);
+    background-image: repeating-linear-gradient(125deg, #F8F8F8, #F8F8F8 1px, rgba(255, 255, 255, 0.5) 1px, rgba(255, 255, 255, 0.5) 10px); }
+    .home-module-list ul li div.home-module-wrapper img {
+      float: left;
+      width: 130px;
+      height: 90px;
+      margin: 10px;
+      border-radius: 3px; }
+    .home-module-list ul li div.home-module-wrapper .home-module-content {
+      color: #3F3F3F;
+      margin: 12px 25px; }
+      .home-module-list ul li div.home-module-wrapper .home-module-content .home-module-title {
+        text-transform: uppercase;
+        color: #3F3F3F;
+        font-size: 17px; }
+      .home-module-list ul li div.home-module-wrapper .home-module-content .home-module-detail {
+        color: #3F3F3F;
+        font-size: 15px; }
+      .home-module-list ul li div.home-module-wrapper .home-module-content .home-button {
+        float: right; }
+
+  .quiz {
+    background: #FAFAFA;
+    color: #15273F;
+    text-align: center;
+    margin: 0 auto;
+    position: relative;
+    height: 100%; 
+  }
+  .woonoz-button {
+    background-color: #e9b66e;
+    text-transform: uppercase;
+    margin: 10px;
+    border-radius: 3px;
+    padding: 12px; 
+  }
+  .footer {
+    position: absolute;
+    display: block;
+    height: 40px;
+    background-color: #fff;
+    bottom: 0;
+    width: 100%;
+    padding-top: 20px; 
+  }
+  .clear-fix {
+    clear: both; 
+  }

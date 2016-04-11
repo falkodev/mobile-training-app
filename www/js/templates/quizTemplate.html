@@ -1,0 +1,27 @@
+<ion-content padding class="quiz">
+
+  <h3>Application e-learning Woonoz</h3>
+  <p>
+    Question
+  </p>
+  <p id="progression">Progression : {{progression || 0}}</p>
+  <div>
+    <canvas style="margin:0;padding:0;position:relative;left:50px;top:50px;padding-bottom:50px;" id="imgCanvas" (click)="handleUserClick()">
+      Sorry bro. Canvas not supported :(
+    </canvas>
+  </div>
+  <button id="noErrorButton" class="woonoz-button" (click)="noErrorClick()">Pas d'erreur</button>
+  <div>
+    <div [ngSwitch]="answerStatus">
+      <p *ngSwitchWhen="1">Bonne réponse vous avez trouvé la zone</p>
+      <p *ngSwitchWhen="2">Bonne réponse il n'y avait rien à trouver</p>
+      <p *ngSwitchWhen="3">Mauvaise réponse il y avait une erreur</p>
+      <p *ngSwitchWhen="4">Mauvaise réponse il n'y avait pas d'erreur</p>
+      <p *ngSwitchWhen="5">Réponse incorrecte. Il y avait bien une erreur mais à un autre endroit.</p>
+      <p *ngSwitchDefault></p>
+    </div>
+    <p id="answerExplanation"></p>
+    <button id="nextQuestionButton" class="woonoz-button" (click)="nextQuestion()" hidden>Suivant</button>
+  </div>
+  <button id="quitQuizButton" class="woonoz-button" (click)="quitQuiz(endedByEngine)">Quitter le module</button>
+</ion-content>

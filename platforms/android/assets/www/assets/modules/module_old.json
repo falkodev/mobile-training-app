@@ -1,0 +1,880 @@
+{
+  "name": "Flunch_module_dev",
+  "description": "Ceci est la description du module",
+  "chapters": [
+    {
+      "name": "Débutant",
+      "guid": "a0a29bf7-0b2e-4927-afd8-5e7cfa51dbff",
+      "isKeyPoint": false,
+      "subChapters": [
+        {
+          "name": "Point clé 001",
+          "guid": "93b7f10d-2912-4050-a8af-6e2a7c033714",
+          "isKeyPoint": true,
+          "subChapters": [],
+          "exercises": [
+            {
+              "position": 0,
+              "guid": "7ffadd26-fc9a-4af3-91e0-0bec72846964",
+              "type": "ClickZone",
+              "explanation": [
+                [
+                  {
+                    "htmlText": "\u003cP\u003eCeci est commentaire 1 \u003cimg src\u003d\"${url}/co_d4b247012271b98dc187cb8672a9b8b6.png\" width\u003d\u0027720\u0027 height\u003d\u0027540\u0027\u003e"
+                  }
+                ]
+              ],
+              "clickZoneType": "single",
+              "autoValidation": true,
+              "image": {
+                "url": "co_cfe609839e97f0fc75a60d6fe45b5091.png",
+                "height": 540,
+                "width": 720
+              },
+              "polygoneList": [
+                {
+                  "points": [
+                    {
+                      "x": 411,
+                      "y": 363
+                    },
+                    {
+                      "x": 529,
+                      "y": 363
+                    },
+                    {
+                      "x": 529,
+                      "y": 496
+                    },
+                    {
+                      "x": 411,
+                      "y": 496
+                    },
+                    {
+                      "x": 411,
+                      "y": 363
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "position": 1,
+              "guid": "cb63b072-ad1f-4a46-81be-f8f955a86416",
+              "type": "ClickZone",
+              "explanation": [
+                [
+                  {
+                    "htmlText": "\u003cP\u003eCeci est commentaire 2 \u003c/P\u003e\n\u003cP\u003e\u003cimg src\u003d\"${url}/co_d4b247012271b98dc187cb8672a9b8b6.png\" width\u003d\u0027720\u0027 height\u003d\u0027540\u0027\u003e"
+                  }
+                ]
+              ],
+              "clickZoneType": "single",
+              "autoValidation": true,
+              "image": {
+                "url": "co_fb87474350785214e341664c5d800a37.png",
+                "height": 540,
+                "width": 720
+              },
+              "polygoneList": [
+                {
+                  "points": [
+                    {
+                      "x": 378,
+                      "y": 315
+                    },
+                    {
+                      "x": 432,
+                      "y": 315
+                    },
+                    {
+                      "x": 432,
+                      "y": 428
+                    },
+                    {
+                      "x": 378,
+                      "y": 428
+                    },
+                    {
+                      "x": 378,
+                      "y": 315
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "position": 2,
+              "guid": "0befe2d5-0c5d-44c3-a519-56bf39545d59",
+              "type": "ClickZone",
+              "explanation": [
+                [
+                  {
+                    "htmlText": "Ceci est commentaire 3 \u003cimg src\u003d\"${url}/co_d4b247012271b98dc187cb8672a9b8b6.png\" width\u003d\u0027720\u0027 height\u003d\u0027540\u0027\u003e"
+                  }
+                ]
+              ],
+              "clickZoneType": "single",
+              "autoValidation": true,
+              "image": {
+                "url": "co_fb8a9308567a99f0de9305f506efadf3.png",
+                "height": 540,
+                "width": 720
+              },
+              "polygoneList": [
+                {
+                  "points": [
+                    {
+                      "x": 487,
+                      "y": 406
+                    },
+                    {
+                      "x": 540,
+                      "y": 406
+                    },
+                    {
+                      "x": 540,
+                      "y": 519
+                    },
+                    {
+                      "x": 487,
+                      "y": 519
+                    },
+                    {
+                      "x": 487,
+                      "y": 406
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Point clé 002",
+          "guid": "1835b709-eed6-4d9d-acb0-8149b2af3d08",
+          "isKeyPoint": true,
+          "subChapters": [],
+          "exercises": [
+            {
+              "position": 0,
+              "guid": "0bbf0e88-9956-49b6-a98e-6da2d90efbd5",
+              "type": "ClickZone",
+              "explanation": [
+                [
+                  {
+                    "htmlText": "Ceci est commentaire 4 \u003cimg src\u003d\"${url}/co_d4b247012271b98dc187cb8672a9b8b6.png\" width\u003d\u0027720\u0027 height\u003d\u0027540\u0027\u003e"
+                  }
+                ]
+              ],
+              "clickZoneType": "single",
+              "autoValidation": true,
+              "image": {
+                "url": "co_6f61ea32add7879a14c4d055c7f3e1ee.png",
+                "height": 540,
+                "width": 720
+              },
+              "polygoneList": [
+                {
+                  "points": [
+                    {
+                      "x": 160,
+                      "y": 362
+                    },
+                    {
+                      "x": 245,
+                      "y": 362
+                    },
+                    {
+                      "x": 245,
+                      "y": 495
+                    },
+                    {
+                      "x": 160,
+                      "y": 495
+                    },
+                    {
+                      "x": 160,
+                      "y": 362
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "position": 1,
+              "guid": "ff195f27-49f5-4d74-95ed-3e57440e66a6",
+              "type": "ClickZone",
+              "explanation": [
+                [
+                  {
+                    "htmlText": "Ceci est commentaire 5 \u003cimg src\u003d\"${url}/co_d4b247012271b98dc187cb8672a9b8b6.png\" width\u003d\u0027720\u0027 height\u003d\u0027540\u0027\u003e"
+                  }
+                ]
+              ],
+              "clickZoneType": "single",
+              "autoValidation": true,
+              "image": {
+                "url": "co_958ea40a32cfad5ee0b5d0799877dc7c.png",
+                "height": 540,
+                "width": 720
+              },
+              "polygoneList": [
+                {
+                  "points": [
+                    {
+                      "x": 294,
+                      "y": 408
+                    },
+                    {
+                      "x": 447,
+                      "y": 408
+                    },
+                    {
+                      "x": 447,
+                      "y": 511
+                    },
+                    {
+                      "x": 294,
+                      "y": 511
+                    },
+                    {
+                      "x": 294,
+                      "y": 408
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "position": 2,
+              "guid": "3ccb3836-3dcc-41ca-81fa-af1ee71f0285",
+              "type": "ClickZone",
+              "explanation": [
+                [
+                  {
+                    "htmlText": "Ceci est commentaire 6 \u003cimg src\u003d\"${url}/co_d4b247012271b98dc187cb8672a9b8b6.png\" width\u003d\u0027720\u0027 height\u003d\u0027540\u0027\u003e"
+                  }
+                ]
+              ],
+              "clickZoneType": "single",
+              "autoValidation": true,
+              "image": {
+                "url": "co_166efa924fdd09ece6713eb5b5e6c4df.png",
+                "height": 540,
+                "width": 720
+              },
+              "polygoneList": [
+                {
+                  "points": [
+                    {
+                      "x": 358,
+                      "y": 320
+                    },
+                    {
+                      "x": 442,
+                      "y": 320
+                    },
+                    {
+                      "x": 442,
+                      "y": 376
+                    },
+                    {
+                      "x": 358,
+                      "y": 376
+                    },
+                    {
+                      "x": 358,
+                      "y": 320
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Point clé 003",
+          "guid": "36a8b02e-f950-4a43-bf38-c0e1a38766e7",
+          "isKeyPoint": true,
+          "subChapters": [],
+          "exercises": [
+            {
+              "position": 0,
+              "guid": "5ede10d1-647e-4691-a93f-b2840bff21be",
+              "type": "ClickZone",
+              "explanation": [
+                [
+                  {
+                    "htmlText": "\u003cP\u003eCeci est commentaire 7\u003c/P\u003e\n\u003cP\u003e\u0026nbsp;\u003cimg src\u003d\"${url}/co_d4b247012271b98dc187cb8672a9b8b6.png\" width\u003d\u0027720\u0027 height\u003d\u0027540\u0027\u003e"
+                  }
+                ]
+              ],
+              "clickZoneType": "single",
+              "autoValidation": true,
+              "image": {
+                "url": "co_90ab9c1b516073aa966aded488d6db8d.png",
+                "height": 540,
+                "width": 720
+              },
+              "polygoneList": [
+                {
+                  "points": [
+                    {
+                      "x": 56,
+                      "y": 378
+                    },
+                    {
+                      "x": 83,
+                      "y": 378
+                    },
+                    {
+                      "x": 83,
+                      "y": 443
+                    },
+                    {
+                      "x": 56,
+                      "y": 443
+                    },
+                    {
+                      "x": 56,
+                      "y": 378
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "position": 1,
+              "guid": "4e9765cf-211f-4243-b43d-61ba3a4a7a8e",
+              "type": "ClickZone",
+              "explanation": [
+                [
+                  {
+                    "htmlText": "\u003cP\u003eCeci est commentaire 8\u003c/P\u003e\n\u003cP\u003e\u003cimg src\u003d\"${url}/co_d4b247012271b98dc187cb8672a9b8b6.png\" width\u003d\u0027720\u0027 height\u003d\u0027540\u0027\u003e"
+                  }
+                ]
+              ],
+              "clickZoneType": "single",
+              "autoValidation": true,
+              "image": {
+                "url": "co_ada2c8728fd0a63096a08666e4e87b5d.png",
+                "height": 540,
+                "width": 720
+              },
+              "polygoneList": [
+                {
+                  "points": [
+                    {
+                      "x": 414,
+                      "y": 303
+                    },
+                    {
+                      "x": 465,
+                      "y": 303
+                    },
+                    {
+                      "x": 465,
+                      "y": 420
+                    },
+                    {
+                      "x": 414,
+                      "y": 420
+                    },
+                    {
+                      "x": 414,
+                      "y": 303
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "position": 2,
+              "guid": "cdadf242-5e7f-441b-aa54-f2fdebd50a79",
+              "type": "ClickZone",
+              "explanation": [
+                [
+                  {
+                    "htmlText": "\u003cP\u003eCeci est commentaire 9 \u003c/P\u003e\n\u003cP\u003e\u003cimg src\u003d\"${url}/co_d4b247012271b98dc187cb8672a9b8b6.png\" width\u003d\u0027720\u0027 height\u003d\u0027540\u0027\u003e"
+                  }
+                ]
+              ],
+              "clickZoneType": "single",
+              "autoValidation": true,
+              "image": {
+                "url": "co_9a53c7a8e01f1ed61bb3cc7f6c00f521.png",
+                "height": 540,
+                "width": 720
+              },
+              "polygoneList": [
+                {
+                  "points": [
+                    {
+                      "x": 341,
+                      "y": 286
+                    },
+                    {
+                      "x": 416,
+                      "y": 286
+                    },
+                    {
+                      "x": 416,
+                      "y": 389
+                    },
+                    {
+                      "x": 341,
+                      "y": 389
+                    },
+                    {
+                      "x": 341,
+                      "y": 286
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "exercises": []
+    },
+    {
+      "name": "Expérimenté",
+      "guid": "d69afb7c-fc48-401e-a609-2798937e2725",
+      "isKeyPoint": false,
+      "subChapters": [
+        {
+          "name": "Point clé 004",
+          "guid": "19fbab04-dc96-4158-a1cb-ea52c5c6c631",
+          "isKeyPoint": true,
+          "subChapters": [],
+          "exercises": [
+            {
+              "position": 0,
+              "guid": "3792ca80-d276-4864-8d4a-ce168787c1ee",
+              "type": "ClickZone",
+              "explanation": [
+                [
+                  {
+                    "htmlText": "Ceci est commentaire 10 \u003cimg src\u003d\"${url}/co_d4b247012271b98dc187cb8672a9b8b6.png\" width\u003d\u0027720\u0027 height\u003d\u0027540\u0027\u003e"
+                  }
+                ]
+              ],
+              "clickZoneType": "single",
+              "autoValidation": true,
+              "image": {
+                "url": "co_cfe609839e97f0fc75a60d6fe45b5091.png",
+                "height": 540,
+                "width": 720
+              },
+              "polygoneList": [
+                {
+                  "points": [
+                    {
+                      "x": 411,
+                      "y": 363
+                    },
+                    {
+                      "x": 529,
+                      "y": 363
+                    },
+                    {
+                      "x": 529,
+                      "y": 496
+                    },
+                    {
+                      "x": 411,
+                      "y": 496
+                    },
+                    {
+                      "x": 411,
+                      "y": 363
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "position": 1,
+              "guid": "4fc5b972-89d2-41ee-8de0-aeb5a4de4e82",
+              "type": "ClickZone",
+              "explanation": [
+                [
+                  {
+                    "htmlText": "Ceci est commentaire 11 \u003cimg src\u003d\"${url}/co_d4b247012271b98dc187cb8672a9b8b6.png\" width\u003d\u0027720\u0027 height\u003d\u0027540\u0027\u003e"
+                  }
+                ]
+              ],
+              "clickZoneType": "single",
+              "autoValidation": true,
+              "image": {
+                "url": "co_fb87474350785214e341664c5d800a37.png",
+                "height": 540,
+                "width": 720
+              },
+              "polygoneList": [
+                {
+                  "points": [
+                    {
+                      "x": 378,
+                      "y": 315
+                    },
+                    {
+                      "x": 432,
+                      "y": 315
+                    },
+                    {
+                      "x": 432,
+                      "y": 428
+                    },
+                    {
+                      "x": 378,
+                      "y": 428
+                    },
+                    {
+                      "x": 378,
+                      "y": 315
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "position": 2,
+              "guid": "23ef7c80-f679-4789-b47f-61c6ad2ce98a",
+              "type": "ClickZone",
+              "explanation": [
+                [
+                  {
+                    "htmlText": "\u003cP\u003eCeci est commentaire 12\u003c/P\u003e\n\u003cP\u003e\u003cimg src\u003d\"${url}/co_d4b247012271b98dc187cb8672a9b8b6.png\" width\u003d\u0027720\u0027 height\u003d\u0027540\u0027\u003e"
+                  }
+                ]
+              ],
+              "clickZoneType": "single",
+              "autoValidation": true,
+              "image": {
+                "url": "co_fb8a9308567a99f0de9305f506efadf3.png",
+                "height": 540,
+                "width": 720
+              },
+              "polygoneList": [
+                {
+                  "points": [
+                    {
+                      "x": 487,
+                      "y": 406
+                    },
+                    {
+                      "x": 540,
+                      "y": 406
+                    },
+                    {
+                      "x": 540,
+                      "y": 519
+                    },
+                    {
+                      "x": 487,
+                      "y": 519
+                    },
+                    {
+                      "x": 487,
+                      "y": 406
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Point clé 005",
+          "guid": "46973d9e-1160-4f8c-8951-24fae7db6f47",
+          "isKeyPoint": true,
+          "subChapters": [],
+          "exercises": [
+            {
+              "position": 0,
+              "guid": "c456d5c9-7317-45b2-9a90-ec8e9cd9b214",
+              "type": "ClickZone",
+              "explanation": [
+                [
+                  {
+                    "htmlText": "\u003cP\u003eCeci est commentaire 13\u003c/P\u003e\n\u003cP\u003e\u003cimg src\u003d\"${url}/co_d4b247012271b98dc187cb8672a9b8b6.png\" width\u003d\u0027720\u0027 height\u003d\u0027540\u0027\u003e"
+                  }
+                ]
+              ],
+              "clickZoneType": "single",
+              "autoValidation": true,
+              "image": {
+                "url": "co_6f61ea32add7879a14c4d055c7f3e1ee.png",
+                "height": 540,
+                "width": 720
+              },
+              "polygoneList": [
+                {
+                  "points": [
+                    {
+                      "x": 160,
+                      "y": 362
+                    },
+                    {
+                      "x": 245,
+                      "y": 362
+                    },
+                    {
+                      "x": 245,
+                      "y": 495
+                    },
+                    {
+                      "x": 160,
+                      "y": 495
+                    },
+                    {
+                      "x": 160,
+                      "y": 362
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "position": 1,
+              "guid": "5018faf7-96ce-48d4-9071-7b0af69abded",
+              "type": "ClickZone",
+              "explanation": [
+                [
+                  {
+                    "htmlText": "\u003cP\u003eCeci est commentaire 14\u003c/P\u003e\n\u003cP\u003e\u003cimg src\u003d\"${url}/co_d4b247012271b98dc187cb8672a9b8b6.png\" width\u003d\u0027720\u0027 height\u003d\u0027540\u0027\u003e"
+                  }
+                ]
+              ],
+              "clickZoneType": "single",
+              "autoValidation": true,
+              "image": {
+                "url": "co_958ea40a32cfad5ee0b5d0799877dc7c.png",
+                "height": 540,
+                "width": 720
+              },
+              "polygoneList": [
+                {
+                  "points": [
+                    {
+                      "x": 294,
+                      "y": 408
+                    },
+                    {
+                      "x": 447,
+                      "y": 408
+                    },
+                    {
+                      "x": 447,
+                      "y": 511
+                    },
+                    {
+                      "x": 294,
+                      "y": 511
+                    },
+                    {
+                      "x": 294,
+                      "y": 408
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "position": 2,
+              "guid": "2c40bed7-735b-4354-a302-f3687511952f",
+              "type": "ClickZone",
+              "explanation": [
+                [
+                  {
+                    "htmlText": "Ceci est commentaire 15 \u003cimg src\u003d\"${url}/co_d4b247012271b98dc187cb8672a9b8b6.png\" width\u003d\u0027720\u0027 height\u003d\u0027540\u0027\u003e"
+                  }
+                ]
+              ],
+              "clickZoneType": "single",
+              "autoValidation": true,
+              "image": {
+                "url": "co_166efa924fdd09ece6713eb5b5e6c4df.png",
+                "height": 540,
+                "width": 720
+              },
+              "polygoneList": [
+                {
+                  "points": [
+                    {
+                      "x": 358,
+                      "y": 320
+                    },
+                    {
+                      "x": 442,
+                      "y": 320
+                    },
+                    {
+                      "x": 442,
+                      "y": 376
+                    },
+                    {
+                      "x": 358,
+                      "y": 376
+                    },
+                    {
+                      "x": 358,
+                      "y": 320
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Point clé 006",
+          "guid": "3d15fc00-e05c-449c-a8c5-248e24ec144c",
+          "isKeyPoint": true,
+          "subChapters": [],
+          "exercises": [
+            {
+              "position": 0,
+              "guid": "e35f1075-ed03-407f-80ef-8aa9dfd74f8d",
+              "type": "ClickZone",
+              "explanation": [
+                [
+                  {
+                    "htmlText": "\u003cP\u003eCeci est commentaire 16\u003c/P\u003e\n\u003cP\u003e\u003cimg src\u003d\"${url}/co_d4b247012271b98dc187cb8672a9b8b6.png\" width\u003d\u0027720\u0027 height\u003d\u0027540\u0027\u003e"
+                  }
+                ]
+              ],
+              "clickZoneType": "single",
+              "autoValidation": true,
+              "image": {
+                "url": "co_90ab9c1b516073aa966aded488d6db8d.png",
+                "height": 540,
+                "width": 720
+              },
+              "polygoneList": [
+                {
+                  "points": [
+                    {
+                      "x": 56,
+                      "y": 378
+                    },
+                    {
+                      "x": 83,
+                      "y": 378
+                    },
+                    {
+                      "x": 83,
+                      "y": 443
+                    },
+                    {
+                      "x": 56,
+                      "y": 443
+                    },
+                    {
+                      "x": 56,
+                      "y": 378
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "position": 1,
+              "guid": "689ccb21-cfc9-4c0c-803d-b61f4c6814b1",
+              "type": "ClickZone",
+              "explanation": [
+                [
+                  {
+                    "htmlText": "\u003cP\u003eCeci est commentaire 17\u003c/P\u003e\n\u003cP\u003e\u003cimg src\u003d\"${url}/co_d4b247012271b98dc187cb8672a9b8b6.png\" width\u003d\u0027720\u0027 height\u003d\u0027540\u0027\u003e"
+                  }
+                ]
+              ],
+              "clickZoneType": "single",
+              "autoValidation": true,
+              "image": {
+                "url": "co_ada2c8728fd0a63096a08666e4e87b5d.png",
+                "height": 540,
+                "width": 720
+              },
+              "polygoneList": [
+                {
+                  "points": [
+                    {
+                      "x": 414,
+                      "y": 303
+                    },
+                    {
+                      "x": 465,
+                      "y": 303
+                    },
+                    {
+                      "x": 465,
+                      "y": 420
+                    },
+                    {
+                      "x": 414,
+                      "y": 420
+                    },
+                    {
+                      "x": 414,
+                      "y": 303
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "position": 2,
+              "guid": "9ba9ab1e-cbe2-48bd-b506-26f9e488a5ee",
+              "type": "ClickZone",
+              "explanation": [
+                [
+                  {
+                    "htmlText": "Ceci est commentaire 18"
+                  }
+                ]
+              ],
+              "clickZoneType": "single",
+              "autoValidation": true,
+              "image": {
+                "url": "co_9a53c7a8e01f1ed61bb3cc7f6c00f521.png",
+                "height": 540,
+                "width": 720
+              },
+              "polygoneList": [
+                {
+                  "points": [
+                    {
+                      "x": 341,
+                      "y": 286
+                    },
+                    {
+                      "x": 416,
+                      "y": 286
+                    },
+                    {
+                      "x": 416,
+                      "y": 389
+                    },
+                    {
+                      "x": 341,
+                      "y": 389
+                    },
+                    {
+                      "x": 341,
+                      "y": 286
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "exercises": []
+    }
+  ]
+}
