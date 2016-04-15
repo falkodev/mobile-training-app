@@ -1,13 +1,11 @@
 var quiz = function () {
-	this.GOOD_ERROR = 1;
-	this.GOOD_NOERROR = 2;
-	this.BAD_ERROR = 3;
-	this.BAD_NOERROR = 4;
+	this.GOOD_ERROR     = 1;
+	this.GOOD_NOERROR   = 2;
+	this.BAD_ERROR      = 3;
+	this.BAD_NOERROR    = 4;
 	this.BAD_WRONGERROR = 5;
-	this.NO_ANSWER = 100;
+	this.NO_ANSWER      = 100;
 }
-
-console.log('in quiz');
 
 function loadAjax(file, callback) {
 	var xobj = new XMLHttpRequest();
@@ -23,41 +21,31 @@ function loadAjax(file, callback) {
 // ask the engine a new question and retrieve elements for answer
 function nextQuestion() {
 	// when displaying new question, hide button "next" and previous explanation
+	var nextQuestionButton = document.getElementById('nextQuestionButton');
 	this.hideElements();
 
 	this.alreadyClicked = false;
 	
 	let guidQuestion = this.engine.nextExerciseGuid();
-	// console.log('guidQuestion:' + guidQuestion)
-	// guidQuestion = null;
-	if(guidQuestion) {
-		$('#nextQuestionButton').attr('guid', guidQuestion);
-		$('#nextQuestionButton').removeClass('hidden');
-
-		// var nextQuestionButton = document.getElementById('nextQuestionButton');
-	 //  	nextQuestionButton.setAttribute('guid', guidQuestion);
-
+	if(guidQuestion) {	  
 		this.getElementsFromObj(this.jsonObj, guidQuestion, this.questionProps); 
 
-		this.readNestedObj(this.questionProps); //useful if need to display in console what questionProps object contains
+		// this.readNestedObj(this.questionProps); //useful if need to display in console what questionProps object contains
 
 		// define canvas to display image
-		var imgCanvas = document.getElementById('imgCanvas');
-	  	// imgCanvas.width  = this.questionProps['image']['width'];
-	  	// imgCanvas.height = this.questionProps['image']['height'];
-	  	imgCanvas.setAttribute('width',this.questionProps['image']['width']);
-	  	imgCanvas.setAttribute('height',this.questionProps['image']['height']);
-	  	let context      = imgCanvas.getContext('2d');
+		var imgCanvas = document.getElementById('img-canvas');
+	  	imgCanvas.width  = this.questionProps['image']['width'];
+	  	imgCanvas.height = this.questionProps['image']['height'];;
+	  	var context      = imgCanvas.getContext('2d');
 
 	  	// add image to canvas
-		let quizImage = new Image();
-		quizImage.src = 'assets/modules/' + this.questionProps['image']['url'];
+		var quizImage = new Image();
+		quizImage.src = 'assets/modules/module' + window.moduleId +'/' + this.questionProps['image']['url'];
 		quizImage.onload = function(){ //draw image when picture loaded
 			context.drawImage(quizImage, 0, 0);
 	  	}
 
 	  	// attach guid to "next" button
-	  	var nextQuestionButton = document.getElementById('nextQuestionButton');
 	  	nextQuestionButton.setAttribute('guid', guidQuestion);
 	  	this.endedByEngine = false;
   	} else  {
@@ -96,15 +84,15 @@ function getElementsFromObj(obj, id, props) {
 
 // hide button "next" and previous explanation
 function hideElements() {
-	// nextQuestionButton.hidden = true;
-	// answerExplanation.innerHTML = '';
+	nextQuestionButton.hidden = true;
+	answerExplanation.innerHTML = '';
 	this.answerStatus = this.NO_ANSWER;
 }
 
-loadAjax('assets/modules/module.json', function(response) {
+function onPageLoaded(response) {
 	returnJSON = JSON.parse(response);
 	console.log('returnJSON: ' + returnJSON);
-	var inst = new quiz();
+	// var inst = new quiz();
 	
 	this.questionProps  = {};
 	this.jsonObj        = {};
@@ -130,6 +118,4 @@ loadAjax('assets/modules/module.json', function(response) {
 	}
 	this.engine = this.engineBuilder.createEngine();
 	this.nextQuestion();
-
-	console.log('this.NO_ANSWER: ' + inst.NO_ANSWER);
-});
+}

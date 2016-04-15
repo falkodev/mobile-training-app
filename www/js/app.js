@@ -63,6 +63,15 @@ function onDeviceReady() {
       analyzeHash();
     });
 
+    // used for test : read props extracted from json
+    function readNestedObj(obj){
+      for(var prop in obj) {
+        console.log('prop:' + prop + ' value:' + obj[prop]);
+        if(obj[prop] instanceof Object) { 
+          readNestedObj(obj[prop]);
+        }
+      }
+    }
 
     /**
      * [loadTemplate       : get a template, compile it with handblebars.js and add his html content to the DOM]
@@ -70,7 +79,11 @@ function onDeviceReady() {
      * @param  {tmpl       : minified template to compile to display view}
      */
     function loadTemplate(element, tmpl) {
-      var context = buildContext(tmpl);
+      // var context = buildContext(tmpl);
+      // tmpl = replaceAll(tmpl, "[[", "{{");
+      // tmpl = replaceAll(tmpl, "]]", "}}");
+      
+      var context = {};
       var view   = "new " + element + "()";
       var result = eval(view); 
       var html = compileTemplate(tmpl, context, result);
@@ -78,32 +91,37 @@ function onDeviceReady() {
       slider.slidePage($('<div>').html(html));
     }
 
+    // function replaceAll(string, omit, place, prevstring) {
+    //   if (prevstring && string === prevstring)
+    //     return string;
+    //   prevstring = string.replace(omit, place);
+    //   return replaceAll(prevstring, omit, place, string)
+    // }
+
     /**
      * [buildContext    : create context that will be used for Handlebars compilation]
      * @param  {tmpl    : minified template to compile}
      * @return {context : object containing handlebars expression to transform during compilation}
      */
-    function buildContext(tmpl) {
-      var context = {};
-      var i = 0;
+    // function buildContext(tmpl) {
+    //   var context = {};
+    //   var i = 0;
 
-      // find Handlebars expressions in nude template (before compilation)
-      var tab = tmpl.split("{{");
-      $.each(tab, function(key, value){
-        if(i > 0) {
-          var cond = value.substr(0,4);
-          //avoid built-in helpers (if, else, each, ...), partials ({{> xxx}}) and raw blocks ({{{xxx}}})
-          if(value[0] != "#" && value[0] != "/" && value[0] != ">" && value[0] != "{" && value[0] != "!" && cond != "else") {
-            var tab2 = value.split("}}");
-            var expr = tab2[0];
-            // build context for future Handlebars compilation
-            context[expr] = eval(expr);
-          } 
-        }
-        i++;
-      });
-      return context;
-    }
+    //   // find Handlebars expressions in nude template (before compilation)
+    //   var tab = tmpl.split("[[");
+    //   $.each(tab, function(key, value){
+    //     if(i > 0) {
+    //       var cond = value.substr(0,4);
+    //       var tab2 = value.split("]]");
+    //       var expr = tab2[0];
+    //       // build context for future Handlebars compilation
+    //       context[expr] = eval(expr);
+    //     }
+    //     i++;
+    //   });
+
+    //   return context;
+    // }
 
     /**
      * [compileTemplate : compile template with context through Handlebars.js]
@@ -118,6 +136,7 @@ function onDeviceReady() {
           context[key] = value; // add additional parameters to context
         });
       }
+
       var template = Handlebars.compile(tmpl);
       var html     = template(context);
       html         = escapeLink(html);

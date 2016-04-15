@@ -1,7 +1,39 @@
+* {
+  margin: 0;
+}
+
+html, body {
+  height: 100%;
+}
+
 body {
   font-family: "Roboto", "Helvetica Neue", sans-serif;
   font-size: 1.4rem;
-  background-color: #fff; }
+  background-color: #fff; 
+}
+
+.content-view {
+  min-height: 100%;
+  margin-bottom: -40px; 
+}
+.content-view:after {
+  content: "";
+  display: block;
+}
+.footer, .content-view:after {
+  height: 40px; 
+}
+
+.footer {
+  /*background-color: #fff;*/
+  /*bottom: 0;
+  position: absolute;
+  width: 100%;*/
+}
+
+.footer-logo {
+  height: 35px; 
+}
 
 /*@font-face {
     font-family: MyriadProSemiBold;
@@ -29,7 +61,9 @@ body {
 }
 
 .home-module-list ul {
-  list-style-type: none; }
+  list-style-type: none; 
+  margin: 20px 20%;
+}
   .home-module-list ul li div.home-module-wrapper {
     /*width: 800px;*/
     height: 110px;
@@ -76,20 +110,12 @@ body {
     color: #fff;
     border: none;
   }
-  .woonoz-button:after {
+  .home-button:after {
     content: url('../images/sortie_12-18_ffffff.png');
     position: relative;
-    top: 3px;
+    top: 4px;
   }
-  .footer {
-    position: absolute;
-    display: block;
-    height: 40px;
-    background-color: #fff;
-    bottom: 0;
-    width: 100%;
-    padding-top: 20px; 
-  }
+
   .clear-fix {
     clear: both; 
   }
