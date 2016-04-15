@@ -1,0 +1,122 @@
+{
+  "name" : "Flunch 6",
+  "description" : "avec maj spec 07/04.\r\nAvec ou sans zone, une ou plusieurs zone, Instructions en plus par exercice.",
+  "chapters" : [ {
+    "name" : "chap1",
+    "guid" : "599cffb8-7b9a-420a-a6d3-974ed4611373",
+    "isKeyPoint" : false,
+    "subChapters" : [ {
+      "name" : "Point clé 001",
+      "guid" : "724139e5-6d98-43c1-83f3-f17d8a75694d",
+      "isKeyPoint" : true,
+      "subChapters" : [ ],
+      "exercises" : [ {
+        "position" : 0,
+        "guid" : "914495f1-eea2-4cb2-9270-700126ba4d01",
+        "type" : "ClickZone",
+        "instructions" : "Cliquez sur le point qui nécessite une action de votre part.",
+        "explanation" : "<P></P>\n<P>Il n'y avait pas d'erreur.</P>",
+        "autoValidation" : false,
+        "image" : {
+          "url" : "Slide3.png",
+          "height" : 600,
+          "width" : 900
+        },
+        "clickZoneType" : "single",
+        "polygoneList" : null
+      } ]
+    }, {
+      "name" : "Point clé 002",
+      "guid" : "8b796779-cbf5-4c1e-a9c8-50c1d50deba5",
+      "isKeyPoint" : true,
+      "subChapters" : [ ],
+      "exercises" : [ {
+        "position" : 0,
+        "guid" : "5bed1519-4d06-4f41-93d9-eab98f5548b7",
+        "type" : "ClickZone",
+        "instructions" : "Cliquez sur le point qui nécessite une action de votre part.",
+        "explanation" : "<P>Ici une seule zone en haut à gauche.</P>\n<P></P>",
+        "autoValidation" : true,
+        "image" : {
+          "url" : "Slide4.png",
+          "height" : 600,
+          "width" : 900
+        },
+        "clickZoneType" : "single",
+        "polygoneList" : [ {
+          "points" : [ {
+            "x" : 8,
+            "y" : 10
+          }, {
+            "x" : 224,
+            "y" : 10
+          }, {
+            "x" : 224,
+            "y" : 206
+          }, {
+            "x" : 8,
+            "y" : 206
+          }, {
+            "x" : 8,
+            "y" : 10
+          } ]
+        } ]
+      } ]
+    }, {
+      "name" : "Point clé 003",
+      "guid" : "d2507c34-aa13-4ed6-aac7-f021723c9383",
+      "isKeyPoint" : true,
+      "subChapters" : [ ],
+      "exercises" : [ {
+        "position" : 0,
+        "guid" : "54a771ab-0c1e-4f60-b712-a25e49dfae21",
+        "type" : "ClickZone",
+        "instructions" : "Cliquez sur le point qui nécessite une action de votre part.",
+        "explanation" : "Ici il y a 2 zones en haut, à gauche et à droite.",
+        "autoValidation" : true,
+        "image" : {
+          "url" : "Slide5.png",
+          "height" : 600,
+          "width" : 900
+        },
+        "clickZoneType" : "single",
+        "polygoneList" : [ {
+          "points" : [ {
+            "x" : 463,
+            "y" : 10
+          }, {
+            "x" : 889,
+            "y" : 10
+          }, {
+            "x" : 889,
+            "y" : 296
+          }, {
+            "x" : 463,
+            "y" : 296
+          }, {
+            "x" : 463,
+            "y" : 10
+          } ]
+        }, {
+          "points" : [ {
+            "x" : 12,
+            "y" : 13
+          }, {
+            "x" : 393,
+            "y" : 13
+          }, {
+            "x" : 393,
+            "y" : 293
+          }, {
+            "x" : 12,
+            "y" : 293
+          }, {
+            "x" : 12,
+            "y" : 13
+          } ]
+        } ]
+      } ]
+    } ],
+    "exercises" : [ ]
+  } ]
+}

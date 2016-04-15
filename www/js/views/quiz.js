@@ -21,11 +21,10 @@ function loadAjax(file, callback) {
 // ask the engine a new question and retrieve elements for answer
 function nextQuestion() {
 	// when displaying new question, hide button "next" and previous explanation
-	var nextQuestionButton = document.getElementById('nextQuestionButton');
 	this.hideElements();
-
 	this.alreadyClicked = false;
-	
+	noErrorButton.hidden = false;
+
 	var guidQuestion = this.engine.nextExerciseGuid();
 	if(guidQuestion) {	  
 		this.getElementsFromObj(this.jsonObj, guidQuestion, this.questionProps); 
@@ -33,7 +32,6 @@ function nextQuestion() {
 		// this.readNestedObj(this.questionProps); //useful if need to display in console what questionProps object contains
 
 		// define canvas to display image
-		var imgCanvas = document.getElementById('img-canvas');
 	  	imgCanvas.width  = this.questionProps['image']['width'];
 	  	imgCanvas.height = this.questionProps['image']['height'];;
 	  	var context      = imgCanvas.getContext('2d');
@@ -49,7 +47,6 @@ function nextQuestion() {
 	  	nextQuestionButton.setAttribute('guid', guidQuestion);
 	  	this.endedByEngine = false;
   	} else  {
-  		var quitQuizButton = document.getElementById('quitQuizButton');
   		quitQuizButton.innerHTML = "Module terminé";
   		this.endedByEngine = true;
   	}
@@ -85,18 +82,20 @@ function getElementsFromObj(obj, id, props) {
 // hide button "next" and previous explanation
 function hideElements() {
 	nextQuestionButton.hidden = true;
+	imgWrong.hidden = true;
+	imgCorrect.hidden = true;
 	answerExplanation.innerHTML = '';
 	this.answerStatus = this.NO_ANSWER;
 }
 
 function onPageLoaded(response) {
 	returnJSON = JSON.parse(response);
-	console.log('returnJSON: ' + returnJSON);
-	// var inst = new quiz();
 	
 	this.questionProps  = {};
 	this.jsonObj        = {};
 	this.alreadyClicked = false; //allow only one click
+	noErrorButton.hidden = false;
+
 	this.engineBuilder = new com.woonoz.engine.js.JsEngineBuilder();
 	this.engineBuilder.init(false, 4);	
 
@@ -129,7 +128,7 @@ function drawPin(context, posx, posy) {
 }
 
 // return x and y coordinates for a click (or a tap on mobile device)
-function getMousePos(e, imgCanvas) {
+function getMousePos(e) {
     var rect = imgCanvas.getBoundingClientRect();
     return {
       x: e.clientX - rect.left,
@@ -157,9 +156,9 @@ function checkIfClickIsInsideAnswerZone(x, y, point0x, point0y, point1x, point3y
 }
 
 
-function displayAnswer(imgCanvas) {
+function displayAnswer() {
 	var context = imgCanvas.getContext('2d');
-	for(var i = 0; i < this.questionProps.polygoneList.length; i++) {
+	for(var i = 0; i < this.questionProps.polygoneList.length; i++) {		
 		var point0x = this.questionProps['polygoneList'][i]['points'][0]['x'];
 		var point0y = this.questionProps['polygoneList'][i]['points'][0]['y'];
 		var point1x = this.questionProps['polygoneList'][i]['points'][1]['x'];
@@ -167,21 +166,21 @@ function displayAnswer(imgCanvas) {
 		var widthAnswerZone = point1x - point0x;
 		var heigthAnswerZone = point3y - point0y;
 		this.prepareAnswerZone(context);
-
-		setTimeout(() => {
-			context.clearRect(point0x, point0y, widthAnswerZone, heigthAnswerZone);
-		}, 500);
+		// setTimeout(() => {
+		// 	context.clearRect(point0x, point0y, widthAnswerZone, heigthAnswerZone);
+		// }, 500);
+		context.clearRect(point0x, point0y, widthAnswerZone, heigthAnswerZone);
 	}
 }
 
 //define color to use after user has answered in order to display the "correct answer" zone
-function prepareAnswerZone(context, x, y, width, height) {
+function prepareAnswerZone(context) {
     context.fillStyle = "#2FBDD5";
 }
 
 function displayExplanation() {
 	answerExplanation.innerHTML = this.questionProps['explanation'];
-	this.showNoErrorButton = false;
+	noErrorButton.hidden = true;
 	if(this.answerStatus === 1 || this.answerStatus === 2) {
 		imgWrong.hidden   = true;
 		imgCorrect.hidden = false;
@@ -199,55 +198,78 @@ function prepareNextAnswer(isLastAnswerGood) {
 	// send answer to engine
 	this.engine.addInteraction(interaction);
 
-	this.progression = this.engine.getProgression();
+	progression.innerHTML = this.engine.getProgression();
 	nextQuestionButton.hidden = false;
 }
 
 // get click coordinates and check if it is in answer zone
 function handleUserAnswer()
-	{
-		// this.readNestedObj(this.questionProps);
-		if(!this.alreadyClicked) { 
-			this.alreadyClicked = true; //disable click while still on the same exercise
+{
+	// this.readNestedObj(this.questionProps);
+	if(!this.alreadyClicked) { 
+		this.alreadyClicked = true; //disable click while still on the same exercise
 
-			var isGoodAnswer = false;
+		var isGoodAnswer = false;
 
-			// display user click
-			var imgCanvas = document.getElementById('img-canvas');
-			var context = imgCanvas.getContext('2d');
-			var e = window.event;
-			var userClick = this.getMousePos(e, imgCanvas);
-			this.drawPin(context, userClick.x, userClick.y);
+		// display user click
+		var context = imgCanvas.getContext('2d');
+		var e = window.event;
+		var userClick = this.getMousePos(e);
+		this.drawPin(context, userClick.x, userClick.y);
 
-			if(this.hasError()) {
-				for(var i = 0; i < this.questionProps.polygoneList.length; i++) {
-					var point0y = this.questionProps['polygoneList'][i]['points'][0]['y'];
-					var point1x = this.questionProps['polygoneList'][i]['points'][1]['x'];
-					var point0x = this.questionProps['polygoneList'][i]['points'][0]['x'];
-					var point3y = this.questionProps['polygoneList'][i]['points'][3]['y'];
-					isGoodAnswer = this.checkIfClickIsInsideAnswerZone(userClick.x, userClick.y, point0x, point0y, point1x, point3y);
-					if(isGoodAnswer) {
-						break;
-					}
+		if(this.hasError()) {
+			for(var i = 0; i < this.questionProps.polygoneList.length; i++) {
+				var point0y = this.questionProps['polygoneList'][i]['points'][0]['y'];
+				var point1x = this.questionProps['polygoneList'][i]['points'][1]['x'];
+				var point0x = this.questionProps['polygoneList'][i]['points'][0]['x'];
+				var point3y = this.questionProps['polygoneList'][i]['points'][3]['y'];
+				isGoodAnswer = this.checkIfClickIsInsideAnswerZone(userClick.x, userClick.y, point0x, point0y, point1x, point3y);
+				if(isGoodAnswer) {
+					break;
 				}
-				this.answerStatus = isGoodAnswer ? this.GOOD_ERROR : this.BAD_WRONGERROR;
-				this.displayAnswer(imgCanvas);
 			}
-			else {
-				this.answerStatus = this.BAD_NOERROR;
-			}
-
-			// change click area color
-			if (isGoodAnswer) {
-				context.fillStyle = "#3C763D";
-			} else {
-				context.fillStyle = "#A94442";
-			}
-			setTimeout(() => {
-				context.fill();
-			}, 500);
-
-			this.displayExplanation();
-			this.prepareNextAnswer(isGoodAnswer);
+			this.answerStatus = isGoodAnswer ? this.GOOD_ERROR : this.BAD_WRONGERROR;
+			this.displayAnswer();
+		} else {
+			this.answerStatus = this.BAD_NOERROR;
 		}
+
+		// change click area color
+		if (isGoodAnswer) {
+			context.fillStyle = "#3C763D";
+		} else {
+			context.fillStyle = "#A94442";
+		}
+		setTimeout(() => {
+			context.fill();
+		}, 500);
+
+		this.displayExplanation();
+		this.prepareNextAnswer(isGoodAnswer);
 	}
+}
+
+// click on button no error
+function noErrorClick() {
+	if(!this.alreadyClicked) {
+		this.alreadyClicked = true; //disable click while still on the same exercise
+		var isGoodAnswer = true;
+		if(this.hasError()) {
+			isGoodAnswer = false;
+			this.displayAnswer();
+			this.answerStatus = this.BAD_ERROR;
+		}
+		else {
+			this.answerStatus = this.GOOD_NOERROR;
+		}
+		this.prepareNextAnswer(isGoodAnswer);
+		this.displayExplanation();
+	}
+}
+
+// quit quiz and go to final page
+function quitQuiz(endedByEngine) {
+	this.hideElements();
+	displayView('end');
+    // this.nav.push(WoonozResultPage, {endedByEngine: endedByEngine});
+}

@@ -28,7 +28,7 @@ function onDeviceReady() {
     /**
      * [displayView : get the view corresponding to the asked element, in order to load the associated template with context added by the view ]
      */
-    window.displayView = function(element) {    
+    window.displayView = function(element, slideMove) {    
       $.ajax({
         url: 'js/templates/' + element + '.html',
         method: 'get',
@@ -38,7 +38,7 @@ function onDeviceReady() {
           $('.view').remove(); // remove previous view
           var appendString = '<script class="view" src="js/views/' + element + '.js"></script>';// add new view in body
           $('body').append(appendString);
-          loadTemplate(element, data);
+          loadTemplate(element, data, slideMove);
         },
         error: function () {
           $('#tmplContent').html('Internet connection problem');
@@ -78,7 +78,7 @@ function onDeviceReady() {
      * @param  {element    : hash}
      * @param  {tmpl       : minified template to compile to display view}
      */
-    function loadTemplate(element, tmpl) {
+    function loadTemplate(element, tmpl, slideMove) {
       // var context = buildContext(tmpl);
       // tmpl = replaceAll(tmpl, "[[", "{{");
       // tmpl = replaceAll(tmpl, "]]", "}}");
@@ -88,7 +88,7 @@ function onDeviceReady() {
       var result = eval(view); 
       var html = compileTemplate(tmpl, context, result);
 
-      slider.slidePage($('<div>').html(html));
+      slider.slidePage($('<div>').html(html), slideMove);
     }
 
     // function replaceAll(string, omit, place, prevstring) {

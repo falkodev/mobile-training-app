@@ -4,14 +4,16 @@
     <p>
       Question
     </p>
-    <p id="progression">Progression : </p>
+    <p>Progression : <span id="progression"></span></p>
     <div>
-      <canvas id="img-canvas" onclick="handleUserAnswer()">
+      <canvas id="imgCanvas" onclick="handleUserAnswer()">
         Sorry bro. Canvas not supported :(
       </canvas>
     </div>
     <button id="noErrorButton" class="woonoz-button" onclick="noErrorClick()">Pas d'erreur</button>
-    <div>
+    <div class="answer-wrapper">
+      <img id="imgWrong" src="assets/images/answer-wrong.png" hidden>
+      <img id="imgCorrect" src="assets/images/answer-correct.png" hidden>
       <!-- <div [ngSwitch]="answerStatus">
         <p *ngSwitchWhen="1">Bonne réponse vous avez trouvé la zone</p>
         <p *ngSwitchWhen="2">Bonne réponse il n'y avait rien à trouver</p>
