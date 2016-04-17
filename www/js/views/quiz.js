@@ -7,17 +7,6 @@ var quiz = function () {
 	this.NO_ANSWER      = 100;
 }
 
-function loadAjax(file, callback) {
-	var xobj = new XMLHttpRequest();
-	xobj.open('GET', file, false);
-	xobj.onreadystatechange = function () {
-		if (xobj.readyState == 4 && xobj.status == "200") {
-			callback(xobj.responseText);
-		}
-	}
-	xobj.send(null);
-}
-
 // ask the engine a new question and retrieve elements for answer
 function nextQuestion() {
 	// when displaying new question, hide button "next" and previous explanation
@@ -38,7 +27,7 @@ function nextQuestion() {
 
 	  	// add image to canvas
 		var quizImage = new Image();
-		quizImage.src = 'assets/modules/module' + window.moduleId +'/' + this.questionProps['image']['url'];
+		quizImage.src = 'assets/modules/' + window.moduleId +'/' + this.questionProps['image']['url'];
 		quizImage.onload = function(){ //draw image when picture loaded
 			context.drawImage(quizImage, 0, 0);
 	  	}
@@ -50,6 +39,12 @@ function nextQuestion() {
   		quitQuizButton.innerHTML = "Module terminé";
   		this.endedByEngine = true;
   	}
+
+	// cheat mode
+	if(this.jsonObj['cheatMode']) {
+		cheatCorrectButton.hidden = false;
+		cheatWrongButton.hidden   = false;
+	}
 }
 
 // used for test : read props extracted from json
@@ -266,6 +261,21 @@ function noErrorClick() {
 		this.displayExplanation();
 	}
 }
+
+function cheat(correct) {
+	this.displayExplanation();
+	this.prepareNextAnswer(correct);
+	if(this.hasError()){
+		this.answerStatus = correct ? this.GOOD_ERROR : this.BAD_ERROR;
+		this.displayAnswer();
+	}
+	else {
+		this.answerStatus = correct ? this.GOOD_NOERROR : this.BAD_NOERROR;
+	}
+	cheatCorrectButton.hidden = true;
+	cheatWrongButton.hidden   = true;
+}
+
 
 // quit quiz and go to final page
 function quitQuiz(endedByEngine) {

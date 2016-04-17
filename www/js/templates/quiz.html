@@ -11,6 +11,8 @@
       </canvas>
     </div>
     <button id="noErrorButton" class="woonoz-button" onclick="noErrorClick()">Pas d'erreur</button>
+    <button id="cheatCorrectButton" class="woonoz-button" onclick="cheat(true)" hidden>Répondre juste</button>
+    <button id="cheatWrongButton" class="woonoz-button" onclick="cheat(false)" hidden>Répondre faux</button>
     <div class="answer-wrapper">
       <img id="imgWrong" src="assets/images/answer-wrong.png" hidden>
       <img id="imgCorrect" src="assets/images/answer-correct.png" hidden>
@@ -30,7 +32,7 @@
 </section>
 
 <script>
-loadAjax('assets/modules/module' + window.moduleId + '/module.json', function(response) {
+loadAjax('assets/modules/' + window.moduleId + '/module.json', function(response) {
   onPageLoaded(response);
 });
 </script>

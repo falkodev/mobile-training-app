@@ -1,9 +1,36 @@
 var home = function () {
+	
+	var moduleArr = [];
+	$.ajax({
+	    url: 'assets/modules/modules_list.txt',
+	    async: false,
+	    complete: function(data)
+	    {
+	      $.each(data, function(k,v){
+	          if(k === 'responseText') {
+	            modulesList = v.split("\n");
+	            // console.log('modulesList: ' + modulesList)
+	            $.each(modulesList, function(key,value){
+	            	if(value) { //if value is not empty (new line in modules_list.txt)
+						var modules = {};
+						modules.id  = value;
+		            	loadAjax('assets/modules/' + value + '/module.json', function(response) {
+							jsonObj             = JSON.parse(response);
+							modules.img         = 'assets/modules/' + value + '/' + jsonObj['icon'];
+							modules.name        = jsonObj['name'];
+							modules.description = jsonObj['description'];
+						});
+		            	moduleArr.push(modules);
+		            	// console.log('moduleArr: ' + modules.id)
+		            }
+	            })
+	          }
+	      });
+	    }
+  	});
+
 	var result = {
-	  module: [
-	    {id: 1, img: "assets/modules/module1/co_6f61ea32add7879a14c4d055c7f3e1ee.png"},
-	    {id: 2, img: "assets/modules/module2/ae586e93-c454-44eb-a85c-9940369e7354_resize.png"},
-	  ],
+	  module: moduleArr, 
 	  footer: [footer],
 	};
 	return result;

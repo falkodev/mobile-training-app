@@ -25,6 +25,18 @@ function onDeviceReady() {
   
   function init() {
 
+    window.loadAjax = function(file, callback) {
+      var xobj = new XMLHttpRequest();
+      xobj.open('GET', file, false);
+      xobj.onreadystatechange = function () {
+        if (xobj.readyState == 4 && xobj.status == "200") {
+          callback(xobj.responseText);
+        }
+      }
+      xobj.send(null);
+    }
+
+
     /**
      * [displayView : get the view corresponding to the asked element, in order to load the associated template with context added by the view ]
      */
@@ -41,7 +53,7 @@ function onDeviceReady() {
           loadTemplate(element, data, slideMove);
         },
         error: function () {
-          $('#tmplContent').html('Internet connection problem');
+          $('#tmplContent').html('Error loading view');
         }
       });
     }

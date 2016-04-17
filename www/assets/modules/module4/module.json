@@ -1,0 +1,107 @@
+{
+  "name" : "Flunch 8c",
+  "icon" : "c7e1f2a0-60e9-4b3f-95ca-d258c4149884_resize.jpg",
+  "description" : "Flunch 8c",
+  "chapters" : [ {
+    "name" : "chap1",
+    "guid" : "7cf0f678-b00d-43fb-ae7f-bc990acbe762",
+    "isKeyPoint" : false,
+    "subChapters" : [ {
+      "name" : "Point clé 001",
+      "guid" : "724139e5-6d98-43c1-83f3-f17d8a75694d",
+      "isKeyPoint" : true,
+      "subChapters" : [ ],
+      "exercises" : [ {
+        "position" : 0,
+        "guid" : "8a7ce682-c739-477a-8dc2-73960b14a5cc",
+        "type" : "ClickZone",
+        "instructions" : "Trouver l'erreur",
+        "explanation" : " L'erreur est en haut à droite ",
+        "autoValidation" : true,
+        "image" : {
+          "url" : "co_77ebe8f19ee1838959d2f4de36efdc24.png",
+          "height" : 600,
+          "width" : 900
+        },
+        "clickZoneType" : "single",
+        "polygoneList" : [ {
+          "points" : [ {
+            "x" : 10,
+            "y" : 7
+          }, {
+            "x" : 325,
+            "y" : 7
+          }, {
+            "x" : 325,
+            "y" : 250
+          }, {
+            "x" : 10,
+            "y" : 250
+          }, {
+            "x" : 10,
+            "y" : 7
+          } ]
+        } ]
+      } ]
+    }, {
+      "name" : "Point clé 002",
+      "guid" : "0e7445c1-3b7c-4a25-bb7d-77d3aa837a4c",
+      "isKeyPoint" : true,
+      "subChapters" : [ ],
+      "exercises" : [ {
+        "position" : 0,
+        "guid" : "165829b2-0807-49af-afb0-9abdfa72aee5",
+        "type" : "ClickZone",
+        "instructions" : "Trouver l'erreur",
+        "explanation" : " Il n'y a pas d'erreur. ",
+        "autoValidation" : false,
+        "image" : {
+          "url" : "co_77ebe8f19ee1838959d2f4de36efdc24.png",
+          "height" : 600,
+          "width" : 900
+        },
+        "clickZoneType" : "single",
+        "polygoneList" : null
+      } ]
+    }, {
+      "name" : "Point clé 003",
+      "guid" : "323916da-fda9-4de6-a444-1eec8382f9af",
+      "isKeyPoint" : true,
+      "subChapters" : [ ],
+      "exercises" : [ {
+        "position" : 0,
+        "guid" : "11b8916d-cd54-4e9d-a86b-f9ff463e2dce",
+        "type" : "ClickZone",
+        "instructions" : "Trouver l'erreur",
+        "explanation" : "L'erreur est en haut à droite ",
+        "autoValidation" : true,
+        "image" : {
+          "url" : "co_77ebe8f19ee1838959d2f4de36efdc24.png",
+          "height" : 600,
+          "width" : 900
+        },
+        "clickZoneType" : "single",
+        "polygoneList" : [ {
+          "points" : [ {
+            "x" : 0,
+            "y" : 0
+          }, {
+            "x" : 241,
+            "y" : 0
+          }, {
+            "x" : 241,
+            "y" : 194
+          }, {
+            "x" : 0,
+            "y" : 194
+          }, {
+            "x" : 0,
+            "y" : 0
+          } ]
+        } ]
+      } ]
+    } ],
+    "exercises" : [ ]
+  } ],
+  "cheatMode" : "true"
+}
